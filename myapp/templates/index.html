@@ -1,0 +1,85 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
+    <style>
+        h1{
+            margin: 0px;
+            font-family: 'Nova Mono', monospace;
+            font-size:40px;
+        }
+        h3{
+            margin: 0px;
+            font-family: 'Nova Mono', monospace;
+            font-size:20px;
+        }
+        body{
+            background-image: url("http://i.imgur.com/u7ohq27.jpg");
+            text-align:center;
+            background-size: cover;
+            padding:0px;
+        }
+        table{
+            margin:0px auto;
+            padding:20px;
+        }
+        .row{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+	<div class="main"><br><br>
+            <h1> SwachhBharat:SignUp</h1>
+
+    </div>
+
+    <div >
+        <form method="post"><br><br>
+            {% csrf_token %}
+            <table style="font-family: Arial; padding: 10px;">
+                <tr>
+                    <td class="row">
+                        <label for="username">Username: </label>
+                    </td>
+                    <td class = "row">
+                        <input id="username" type="text" name="username" value={{ username }}>
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "row">
+                        <label for="name">Name: </label>
+                    </td>
+                    <td class = "row">
+                        <input id="name" type="text" name="name" value={{ name }}>
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "row">
+                        <label for="email">Email: </label>
+                    </td>
+                    <td class = "row">
+                        <input id="email" type="text" name="email" value={{ email }}>
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "row">
+                        <label for="password">Password: </label>
+                    </td>
+                    <td class = "row">
+                        <input id="password" type="password" name="password" value={{ password }}>
+                    </td>
+                </tr>
+            </table><br>
+            <input type="submit" value="Sign Up">
+        </form>
+
+    </div><br><br>
+
+    <div><h3>Already a user?&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="login/">login</a></span></h3> </div>
+</body>
+</html>

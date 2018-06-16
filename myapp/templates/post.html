@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+</head>
+<body>
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form }}
+
+        <input type="submit" class="btn btn-default" value="POST">
+    </form>
+</body>
+</html>

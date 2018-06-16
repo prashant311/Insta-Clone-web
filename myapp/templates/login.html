@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
+    <style>
+        body{
+            text-align:center;
+            padding: 0px 0px 0px 0px;
+            margin:0px;
+            background-color: transparent;
+            background-image: url("http://i.imgur.com/u7ohq27.jpg");
+            text-align:center;
+            background-size: cover;
+        }
+        h1{
+            margin: 0px;
+            font-family: 'Nova Mono', monospace;
+            font-size:40px;
+            padding: 50px;
+        }
+        h3{
+            margin: 0px;
+            font-family: 'Nova Mono', monospace;
+            font-size:20px;
+        }
+        div{
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+	<div class="main">
+            <h1> SwachhBharat:login</h1>
+    </div>
+
+    <div>
+         <form method="post">
+             {% csrf_token %}
+
+        <div>
+            <label for="username">Username: </label>
+            <input id="username" type="text" name="username" value={{ username }}>
+        </div>
+
+        <div>
+            <label for="password">Password: </label>
+            <input id="password" type="password" name="password" value={{ password }}>
+        </div>
+
+        <input type="submit" value="Log In">
+
+    </form>
+
+
+  	</div><br><br>
+    <div><h3>Don't have an account?</h3><a href="/">Signup</a> </div>
+</body>
+</html>
